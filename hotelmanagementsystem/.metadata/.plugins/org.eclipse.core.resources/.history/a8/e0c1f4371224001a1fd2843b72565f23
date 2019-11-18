@@ -1,0 +1,15 @@
+package com.capgemini.hotelmanagementsystem.dao;
+
+import java.util.List;
+
+import com.capgemini.hotelmanagementsystem.bean.BookingInfoBean;
+
+public interface BookingInfoDAO {
+
+	public boolean bookingInfo(BookingInfoBean bookingInfoBean);
+		
+	public boolean  cancelBooking(int bookingId);
+
+	public List<BookingInfoBean> bookedRoomList();
+
+}

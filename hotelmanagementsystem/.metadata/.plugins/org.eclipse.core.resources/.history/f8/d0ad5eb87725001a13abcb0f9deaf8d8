@@ -1,0 +1,121 @@
+package com.capgemini.hotelmanagementsystem.response;
+
+import java.util.List;
+
+import com.capgemini.hotelmanagementsystem.bean.AdminUserBean;
+import com.capgemini.hotelmanagementsystem.bean.BookingInfoBean;
+import com.capgemini.hotelmanagementsystem.bean.HotelBean;
+import com.capgemini.hotelmanagementsystem.bean.RoomBean;
+import com.capgemini.hotelmanagementsystem.bean.UserInfoBean;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class HotelManagementResponse {
+	private int statusCode;
+	private String message;
+	private String description;
+
+	public AdminUserBean adminUserBean;
+
+	public List<AdminUserBean> userList;
+	public List<RoomBean> roomList;
+
+	public List<HotelBean> hotelList;
+
+	public List<BookingInfoBean> boookedRoomList;
+
+	private UserInfoBean userInfoBean;
+
+	public List<UserInfoBean> getUserProfile;
+
+	public List<AdminUserBean> getAllManager;
+
+	public List<AdminUserBean> getGetAllManager() {
+		return getAllManager;
+	}
+
+	public void setGetAllManager(List<AdminUserBean> getAllManager) {
+		this.getAllManager = getAllManager;
+	}
+
+	public List<UserInfoBean> getGetUserProfile() {
+		return getUserProfile;
+	}
+
+	public void setGetUserProfile(List<UserInfoBean> getUserProfile) {
+		this.getUserProfile = getUserProfile;
+	}
+
+	public int getStatusCode() {
+		return statusCode;
+	}
+
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public AdminUserBean getAdminUserBean() {
+		return adminUserBean;
+	}
+
+	public void setAdminUserBean(AdminUserBean adminUserBean) {
+		this.adminUserBean = adminUserBean;
+	}
+
+	public List<AdminUserBean> getUserList() {
+		return userList;
+	}
+
+	public void setUserList(List<AdminUserBean> userList) {
+		this.userList = userList;
+	}
+
+	public List<RoomBean> getRoomList() {
+		return roomList;
+	}
+
+	public void setRoomList(List<RoomBean> roomList) {
+		this.roomList = roomList;
+	}
+
+	public List<HotelBean> getHotelList() {
+		return hotelList;
+	}
+
+	public void setHotelList(List<HotelBean> hotelList) {
+		this.hotelList = hotelList;
+	}
+
+	public List<BookingInfoBean> getBoookedRoomList() {
+		return boookedRoomList;
+	}
+
+	public void setBoookedRoomList(List<BookingInfoBean> boookedRoomList) {
+		this.boookedRoomList = boookedRoomList;
+	}
+
+	public UserInfoBean getUserInfoBean() {
+		return userInfoBean;
+	}
+
+	public void setUserInfoBean(UserInfoBean userInfoBean) {
+		this.userInfoBean = userInfoBean;
+	}
+
+}

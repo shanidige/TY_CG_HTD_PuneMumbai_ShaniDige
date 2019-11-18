@@ -1,0 +1,18 @@
+package com.capgemini.hotelmanagementsystem.exception;
+
+public class HotelManagementSystemExceptionController extends Exception {
+	private static final long serialVersionUID = 1L;
+	String message;
+
+	public HotelManagementSystemExceptionController(String message1) {
+		super();
+		this.message = message1;
+	}
+
+	
+	@Override
+	public String getMessage() {
+		return message;
+	}
+
+}

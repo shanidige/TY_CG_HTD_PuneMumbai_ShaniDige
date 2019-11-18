@@ -2,3 +2,5 @@
 1573975504476	Rename type 'AdminUserBean'
 1573975578984	Rename package 'com.capgemini.hotelmanagementsystem.dto'
 1573975597880	Rename type 'AdminUserDto'
+1574093683535	Rename type 'FoodService'
+1574093700230	Rename type 'FoodServiceImplementation'

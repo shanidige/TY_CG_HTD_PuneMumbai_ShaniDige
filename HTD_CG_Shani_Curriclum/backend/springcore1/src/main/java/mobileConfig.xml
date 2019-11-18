@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="mobile"
+		class="com.capgemini.springcore1.beans.MobileBean"   >
+		<property name="brandName" value="xiomi" />
+		<property name="modelName" value="redmi 4A" />
+		<property name="price" value="7000"></property>
+		<property name="mobileBean" ref="display" />
+	</bean>
+	
+	<!-- <bean id="mobile"
+		class="com.capgemini.springcore1.beans.MobileBean"   autowire="byType" >
+		<property name="brandName" value="xiomi" />
+		<property name="modelName" value="redmi 4A" />
+		<property name="price" value="7000"></property>
+	</bean> -->
+	
+	<!-- <bean id="mobile"
+		class="com.capgemini.springcore1.beans.MobileBean"  autowire="byName" >
+		<property name="brandName" value="xiomi" />
+		<property name="modelName" value="redmi 4A" />
+		<property name="price" value="7000"></property>
+	</bean> -->
+	
+	<bean id="display"
+		class="com.capgemini.springcore1.beans.MobileDisplayBean">
+		<property name="displaySize" value="5" />
+		<property name="resolution" value="20px" />
+	</bean>
+</beans>

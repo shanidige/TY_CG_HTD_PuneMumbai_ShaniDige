@@ -1,0 +1,6 @@
+Feature: Testing the login feature
+Scenario: Testing the login feautre with valid data
+
+Background: Given the user has loaded application
+			When the user enters the validation
+			 

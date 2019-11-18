@@ -1,0 +1,30 @@
+package com.capgemini.hotelmanagementsystem.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.capgemini.hotelmanagementsystem.bean.ManagerBean;
+import com.capgemini.hotelmanagementsystem.exception.HotelManagementSystemExceptionController;
+@Repository
+public class ManagerDAOImplementation implements ManagerDAO {
+
+	@Override
+	public ManagerBean managerlogin(String userEmail, String password) throws HotelManagementSystemExceptionController {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ManagerBean> managerList() throws HotelManagementSystemExceptionController {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean managerRegister(ManagerBean managerBean) throws HotelManagementSystemExceptionController {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

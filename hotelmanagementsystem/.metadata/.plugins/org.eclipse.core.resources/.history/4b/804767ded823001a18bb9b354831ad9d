@@ -1,0 +1,56 @@
+package com.capgemini.hotelmanagementsystem.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.capgemini.hotelmanagementsystem.bean.RoomBean;
+import com.capgemini.hotelmanagementsystem.response.HotelManagementResponse;
+import com.capgemini.hotelmanagementsystem.service.BookingInfoService;
+import com.capgemini.hotelmanagementsystem.service.RoomService;
+
+@RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*", allowCredentials = "true")
+public class BookingController {
+	@Autowired
+	public BookingInfoService bookingInfoService;
+	
+	HotelManagementResponse hotelManagementResponse = new HotelManagementResponse();
+
+	@PostMapping("/booking")
+	public HotelManagementResponse bookingRoom(@RequestBody RoomBean roomBean) {
+		boolean isRoomAdded = b 
+		if (isRoomAdded) {
+			hotelManagementResponse.setStatusCode(201);
+			hotelManagementResponse.setMessage("Success");
+			hotelManagementResponse.setDescription("Room Added Successfully");
+		} else {
+			hotelManagementResponse.setStatusCode(401);
+			hotelManagementResponse.setMessage("Failed");
+			hotelManagementResponse.setDescription("Unable to Add Room");
+		}
+		return hotelManagementResponse;
+	}// end of addRoom()
+
+	@GetMapping("/getRoomList")
+	public HotelManagementResponse getRoomList() {
+		List<RoomBean> roomList = roomService.getRoom();
+		if (roomList != null && !roomList.isEmpty()) {
+			hotelManagementResponse.setStatusCode(201);
+			hotelManagementResponse.setMessage("Success");
+			hotelManagementResponse.setDescription("Room List");
+			hotelManagementResponse.setRoomList(roomList);
+		} else {
+			hotelManagementResponse.setStatusCode(401);
+			hotelManagementResponse.setMessage("Failed");
+			hotelManagementResponse.setDescription("Unable to fetch Room List");
+		}
+		return hotelManagementResponse;
+	}// end of roomList()
+
+}

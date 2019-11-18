@@ -1,0 +1,63 @@
+package com.capgemini.selenium.rstepdefination;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import junit.framework.Assert;
+
+public class LoginStepDefination {
+	WebDriver driver = new ChromeDriver();
+	@Given("^the user has loaded application in the browser$")
+	public void the_user_has_loaded_application_in_the_browser() throws Throwable {
+		driver.get("http://demo.actitime.com/");
+	   
+	}
+
+	@When("^the user entered the valid username$")
+	public void the_user_entered_the_valid_username() throws Throwable {
+		driver.findElement(By.name("username")).sendKeys("admin");
+	}
+
+	
+
+	@When("^the user enters the valid password$")
+	public void the_user_enters_the_valid_password() throws Throwable {
+		driver.findElement(By.name("pwd")).sendKeys("manager");
+	}
+	@When("^the user clicks on the login button$")
+	public void the_user_clicks_on_the_login_button() throws Throwable {
+		driver.findElement(By.xpath("//div[text()='Login ']")).click();
+		Thread.sleep(5000);
+	}
+
+	@Then("^the dashboard page must be  displayed$")
+	public void the_dashboard_page_must_be_displayed() throws Throwable {
+		String actual = driver.getTitle();
+		String expected = "actiTime - Enter Time-Track";
+		Assert.assertEquals(actual, expected);
+		Thread.sleep(2000);
+		driver.close();
+	}
+
+	@When("^the user enters the Invalid password$")
+	public void the_user_enters_the_Invalid_password() throws Throwable {
+		driver.findElement(By.name("pwd")).sendKeys("mager");
+	}
+
+	@Then("^the user should be in the same page$")
+	public void the_user_should_be_in_the_same_page() throws Throwable {
+		
+		String actual = "http://demo.actitime.com/";
+		String expected = "actiTime - Enter Time-Track";
+		Assert.assertEquals(actual, expected);
+		Thread.sleep(2000);
+		driver.close();
+	
+	}
+
+
+}

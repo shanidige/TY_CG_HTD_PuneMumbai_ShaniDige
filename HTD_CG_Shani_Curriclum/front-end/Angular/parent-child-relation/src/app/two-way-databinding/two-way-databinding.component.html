@@ -1,0 +1,18 @@
+<div class="col-md-4 offset-4 mt-5">
+    <form>
+        <div class="div">
+            <input type="text" class="form-control"  placeholder="enter your name" 
+            name="name"[(ngModel)]='name'>
+        </div>
+        <div class="div">
+                <input type="number" class="form-control"  placeholder="enter your number" 
+                name="mobile"[(ngModel)]='mobile'>
+            </div>
+            <div>
+      <button class="btn btn-primary float-right" (click)='printForm()'>
+          submit
+        </button>
+</div>
+    </form>
+
+</div>

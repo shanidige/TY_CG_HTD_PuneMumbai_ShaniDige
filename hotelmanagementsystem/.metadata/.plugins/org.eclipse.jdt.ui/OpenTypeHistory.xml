@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.dao{AdminUserDAO.java[AdminUserDAO" modifiers="513" timestamp="1576842702746"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.dao{AdminUserDAO.java[AdminUserDAO" modifiers="513" timestamp="1577107583706"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.dao{RoomDAO.java[RoomDAO" modifiers="513" timestamp="1577109866465"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.service{RoomService.java[RoomService" modifiers="513" timestamp="1576858315963"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.service{HotelService.java[HotelService" modifiers="513" timestamp="1576927110657"/>
+<typeInfo handle="=hotelmanagementsystem/C:\/Program Files\/Java\/jre1.8.0_221\/lib\/rt.jar&lt;javax.net.ssl(HostnameVerifier.class[HostnameVerifier" modifiers="1537" timestamp="1569513464795"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.service{BookingInfoService.java[BookingInfoService" modifiers="513" timestamp="1574058915026"/>
+<typeInfo handle="=hotelmanagementsystem/C:\/Program Files\/Java\/jre1.8.0_221\/lib\/rt.jar&lt;java.awt.peer(MenuBarPeer.class[MenuBarPeer" modifiers="1537" timestamp="1569513464795"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.dao{MenuCardDAO.java[MenuCardDAO" modifiers="513" timestamp="1577109522382"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.dao{FoodDAO.java[FoodDAO" modifiers="513" timestamp="1574093093602"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.service{ManagerService.java[ManagerService" modifiers="513" timestamp="1577191713085"/>
+<typeInfo handle="=hotelmanagementsystem/src\/main\/java&lt;com.capgemini.hotelmanagementsystem.dao{ManagerDAO.java[ManagerDAO" modifiers="513" timestamp="1577191318018"/>
 </typeInfoHistroy>

@@ -1,0 +1,37 @@
+<div class="col-md-4 offset-md-4 mt-5">
+    <form [formGroup]='registerForm' (ngSubmit)='printForm(registerForm)'>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" formControlName='email' required minlength="8" class="form-control">
+            <div *ngIf='email.touched && email.invalid'>
+                <p class="alert alert-primary" *ngIf='email.errors.required'>
+                    This field is required.
+                </p>
+                <p class="alert alert-danger" *ngIf='email.errors.minlength'>
+                    It should be 8 character.
+                </p>
+                <p class="alert alert-danger" *ngIf='email.errors.email'>
+                    This field take only email.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" formControlName='password' required minlength="6"
+                class="form-control">
+            <div *ngIf='password.touched && password.invalid'>
+                <p class="alert alert-primary" *ngIf='password.errors.required'>
+                    This field is required
+                </p>
+                <p class="alert alert-primary" *ngIf='password.errors.minlength'>
+                    It takes only 6 character
+                </p>
+                <p class="alert alert-primary" *ngIf='password.errors.password'>
+                    This field take only password
+                </p>
+            </div>
+        </div>
+        <button type="submit" [disabled]='registerForm.invalid'
+            class="btn btn-outline-primary float-right">Register</button>
+    </form>
+</div>

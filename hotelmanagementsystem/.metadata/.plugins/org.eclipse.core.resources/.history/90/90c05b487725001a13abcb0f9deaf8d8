@@ -1,0 +1,7 @@
+package com.capgemini.hotelmanagementsystem.service;
+
+import com.capgemini.hotelmanagementsystem.dao.MenuCardDAO;
+
+public class MenuCardDAOImplementation implements MenuCardDAO {
+
+}

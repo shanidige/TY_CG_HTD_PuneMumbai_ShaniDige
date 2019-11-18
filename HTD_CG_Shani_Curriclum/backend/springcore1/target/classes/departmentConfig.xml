@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="test"
+		class="com.capgemini.springcore1.beans.DepartmentBean" primary="true">
+		<property name="deptId" value="103" />
+		<property name="deptName" value="Testing" />
+	</bean>
+	<bean id="hr"
+		class="com.capgemini.springcore1.beans.DepartmentBean"  autowire-candidate="false">
+		<property name="deptId" value="104" />
+		<property name="deptName" value="Hr" />
+	</bean>
+</beans>

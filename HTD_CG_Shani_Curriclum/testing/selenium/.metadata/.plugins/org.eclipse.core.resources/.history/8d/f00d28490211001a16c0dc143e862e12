@@ -1,0 +1,35 @@
+package com.capgemini.selenium.webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class ListBox {
+	static {
+		System.setProperty("webdriver.chrome.driver", "./src/main/resource/chromedriver.exe");
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver = new ChromeDriver();
+		driver.get("file:///F:/selenium%20html/listbox2.html");
+		
+		WebElement listBox= driver.findElement(By.id("slv"));
+		Select select= new Select(listBox);
+		Thread.sleep(1000);
+		select.deselectAll();
+		select.selectByIndex(0);
+		Thread.sleep(1000);
+		select.selectByValue("h");
+		Thread.sleep(1000);
+		select.selectByVisibleText("fg");
+		Thread.sleep(1000);
+		select.deselectByIndex(0);
+		Thread.sleep(1000);
+		select.deselectByValue("h");
+		Thread.sleep(1000);
+		select.deselectByVisibleText("fg");
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.capgemini.hotelmanagementsystem.exception;
+
+public class HotelManagementSystemException extends Exception {
+
+}

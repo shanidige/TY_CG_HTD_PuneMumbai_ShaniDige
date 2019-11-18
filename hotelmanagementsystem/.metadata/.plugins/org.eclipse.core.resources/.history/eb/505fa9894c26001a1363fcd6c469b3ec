@@ -1,0 +1,19 @@
+package com.capgemini.hotelmanagementsystem.dao;
+
+import java.util.List;
+
+import com.capgemini.hotelmanagementsystem.bean.AdminUserBean;
+import com.capgemini.hotelmanagementsystem.bean.ManagerBean;
+import com.capgemini.hotelmanagementsystem.exception.HotelManagementSystemExceptionController;
+
+public interface ManagerDAO {
+
+	// manager login
+	public ManagerBean login(String userEmail, String password) throws HotelManagementSystemExceptionController;
+
+	// list of manager
+	public List<ManagerBean> managerList() throws HotelManagementSystemExceptionController;
+
+	public boolean managerRegister(ManagerBean managerBean) throws HotelManagementSystemExceptionController;
+
+}

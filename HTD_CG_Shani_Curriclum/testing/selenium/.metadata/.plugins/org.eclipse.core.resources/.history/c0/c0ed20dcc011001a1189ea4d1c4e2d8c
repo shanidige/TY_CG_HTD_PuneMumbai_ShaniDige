@@ -1,0 +1,19 @@
+package com.capgemini.selenium.webdriver;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class TestCalculator {
+@Test
+public void add() {
+	
+	int a=10;
+	int b=11;
+	
+	Calculator cal = new 
+			Calculator()
+	int i=cal.add(a,b);
+	Assert.assertEquals(expected, actual);
+	
+}
+}
