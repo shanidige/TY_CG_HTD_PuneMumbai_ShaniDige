@@ -1,0 +1,51 @@
+package com.capgemini.hotelmanagementsystem.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.capgemini.hotelmanagementsystem.bean.AdminUserBean;
+import com.capgemini.hotelmanagementsystem.dao.AdminUserDAO;
+
+@Service
+public class AdminUserDAOImplementation implements AdminUserDAOService {
+
+	@Autowired
+	private AdminUserDAO adminUserDAO;
+
+	@Override
+	public AdminUserBean adminUserLogin(String userEmail, String password) {
+
+		return adminUserDAO.adminUserLogin(userEmail, password);
+	}
+
+	@Override
+	public boolean userRegister(AdminUserBean adminUserBean) {
+		return adminUserDAO.userRegister(adminUserBean);
+	}
+
+	@Override
+	public List<AdminUserBean> getAllUsers() {
+		// TODO Auto-generated method stub
+		return adminUserDAO.getAllUsers();
+	}
+
+	@Override
+	public List<AdminUserBean> getAllEmployee() {
+		// TODO Auto-generated method stub
+		return adminUserDAO.getAllEmployee();
+	}
+
+	@Override
+	public boolean deleteUser(int userId) {
+		// TODO Auto-generated method stub
+		return adminUserDAO.deleteUser(userId);
+	}
+
+	@Override
+	public boolean deleteEmployee(int userId) {
+		// TODO Auto-generated method stub
+		return adminUserDAO.deleteEmployee(userId);
+	}
+
+}

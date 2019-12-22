@@ -1,0 +1,43 @@
+package com.capgemini.hotelmanagementsystem.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.capgemini.hotelmanagementsystem.bean.AdminUserBean;
+
+@Repository
+public class AdminUserDAOImplementation implements AdminUserDAO {
+
+	@Override
+	public AdminUserBean adminLogin(String userEmail, String password) {
+		return null;
+	}
+
+	@Override
+	public boolean userRegister(AdminUserBean adminUserBean) {
+		return false;
+	}
+
+	@Override
+	public List<AdminUserBean> getAllUsers() {
+		return null;
+	}
+
+	@Override
+	public List<AdminUserBean> getAllEmployee() {
+		return null;
+	}
+
+	@Override
+	public boolean deleteUser(int userId) {
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployee(int userId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

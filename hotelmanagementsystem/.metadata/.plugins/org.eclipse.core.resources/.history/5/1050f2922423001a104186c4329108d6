@@ -1,0 +1,141 @@
+package com.capgemini.hotelmanagementsystem.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import com.capgemini.hotelmanagementsystem.bean.AdminUserBean;
+
+@Repository
+public class AdminUserDAOImplementation implements AdminUserDAO {
+
+	@PersistenceUnit
+	private EntityManagerFactory entityManagerFactory;
+
+	EntityManager entityManager = null;
+	EntityTransaction entityTransaction = null;
+
+	@Override
+	public AdminUserBean adminLogin(String userEmail, String password) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		String jpql = "from AdminUserBean where userEmail = :userEmail and password = :password  where userType='admin' ";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("userEmail", userEmail);
+		query.setParameter("password", password);
+		AdminUserBean adminUserBean = (AdminUserBean) query.getSingleResult();
+		System.out.println(" admin login successfully");
+		return adminUserBean;
+
+	}
+
+	@Override
+	public AdminUserBean managerLogin(String userEmail, String password) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		String jpql = "from AdminUserBean where userEmail = :userEmail and password = :password  where userType='manager' ";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("userEmail", userEmail);
+		query.setParameter("password", password);
+		AdminUserBean adminUserBean = (AdminUserBean) query.getSingleResult();
+		System.out.println(" manager login successfully");
+		return adminUserBean;
+	}
+
+	@Override
+	public AdminUserBean userLogin(String userEmail, String password) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		String jpql = "from AdminUserBean where userEmail = :userEmail and password = :password  where userType='user' ";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("userEmail", userEmail);
+		query.setParameter("password", password);
+		AdminUserBean adminUserBean = (AdminUserBean) query.getSingleResult();
+		System.out.println(" user login successfully");
+		return adminUserBean;
+	}
+
+	@Override
+	public AdminUserBean employeeLogin(String userEmail, String password) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		String jpql = "from AdminUserBean where userEmail = :userEmail and password = :password  where userType='employee' ";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("userEmail", userEmail);
+		query.setParameter("password", password);
+		AdminUserBean adminUserBean = (AdminUserBean) query.getSingleResult();
+		System.out.println("login success");
+		return adminUserBean;
+	}
+
+	@Override
+	public boolean deleteEmployee(int userId) {
+		EntityManagerFactory entityManagerFactory = null;
+		EntityManager entityManager = null;
+		EntityTransaction entityTransaction = null;
+		boolean isRemove = false;
+		try {
+			entityManagerFactory = Persistence.createEntityManagerFactory("hotelManagementSystem");
+			entityManager = entityManagerFactory.createEntityManager();
+			String jpql = "delete AdminUserBean where userId =: userId ";
+			entityTransaction = entityManager.getTransaction();
+			entityTransaction.begin();
+			Query query = entityManager.createQuery(jpql);
+			query.setParameter("userId", userId);
+			query.executeUpdate();
+			entityTransaction.commit();
+			System.out.println("Employee Deleteed Successfully");
+			entityManager.close();
+			isRemove = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unable To Delete Employee!!!");
+		}
+		return isRemove;
+	}
+
+	@Override
+	public boolean userRegister(AdminUserBean adminUserBean) {
+		return false;
+	}
+
+	@Override
+	public List<AdminUserBean> getAllUsers() {
+		return null;
+	}
+
+	@Override
+	public List<AdminUserBean> getAllEmployee() {
+		return null;
+	}
+
+	@Override
+	public boolean deleteUser(int userId) {
+		EntityManagerFactory entityManagerFactory = null;
+		EntityManager entityManager = null;
+		EntityTransaction entityTransaction = null;
+		boolean isRemove = false;
+		try {
+			entityManagerFactory = Persistence.createEntityManagerFactory("hotelManagementSystem");
+			entityManager = entityManagerFactory.createEntityManager();
+			String jpql = "delete AdminUserBean where userId =: userId ";
+			entityTransaction = entityManager.getTransaction();
+			entityTransaction.begin();
+			Query query = entityManager.createQuery(jpql);
+			query.setParameter("userId", userId);
+			query.executeUpdate();
+			entityTransaction.commit();
+			System.out.println("customer Deleteed Successfully");
+			entityManager.close();
+			isRemove = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unable To Delete customer!!!");
+		}
+		return isRemove;
+	}
+
+}

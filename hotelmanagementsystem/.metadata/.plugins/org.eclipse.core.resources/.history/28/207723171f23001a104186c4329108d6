@@ -1,0 +1,26 @@
+package com.capgemini.hotelmanagementsystem.dao;
+
+import java.util.List;
+
+import com.capgemini.hotelmanagementsystem.bean.AdminUserBean;
+
+public interface AdminUserDAO {
+	// login for admin as well as employee & customer(user)
+	public AdminUserBean adminLogin(String userEmail, String password);
+
+// registeration only for customer
+	public boolean userRegister(AdminUserBean adminUserBean);
+
+	// see all customer which is present in database
+	public List<AdminUserBean> getAllUsers();
+
+	// see all employee which is present in database
+	public List<AdminUserBean> getAllEmployee();
+
+	// delete customer by admin
+	public boolean deleteUser(int userId);
+
+	// delete Employee by admin
+	public boolean deleteEmployee(int userId);
+
+}

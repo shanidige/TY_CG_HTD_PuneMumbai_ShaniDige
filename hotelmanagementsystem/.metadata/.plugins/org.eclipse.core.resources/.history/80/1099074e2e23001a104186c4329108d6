@@ -1,0 +1,65 @@
+package com.capgemini.hotelmanagementsystem.bean;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user_other_info")
+public class UserInfoBean {
+	@Id
+	@Column(name = "id")
+	private int id;
+	@Column(name = "user_id")
+	private int userId;
+	@Column(name = "phone_no")
+	private long phoneNumber;
+	@Column(name = "address")
+	private String address;
+	@Column(name = "nationality")
+	private String nationality;
+
+	// getter & setter
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+}

@@ -1,0 +1,33 @@
+package com.capgemini.hotelmanagementsystem.dao;
+
+import java.util.List;
+
+import com.capgemini.hotelmanagementsystem.bean.RoomBean;
+
+public class RoomDAOImplementation implements RoomDAO {
+
+	@Override
+	public boolean addRoom(RoomBean roomBean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<RoomBean> getRoom() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean removeRoom(int roomId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateRoom(RoomBean roomBean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
